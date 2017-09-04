@@ -12,14 +12,14 @@ interface Bar {
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    @Input() dummy: string; // coverage Works
-    @Input() foo: Bar; // coverage Works
-    @Input() test: ExternalBar; // coverage not Works
+    @Input() dummy: string; // coverage work's
+    @Input() foo: Bar; // coverage work's
+    @Input() test: ExternalBar; // coverage not working
+    @Input() testWorks: { externalBar: ExternalBar }; // // coverage work's
 
     title = 'app';
 
-    constructor(private http: Http // coverage not Works
-    ) {
+    constructor(private http: Http /*coverage not Works*/) {
 
     }
 }
